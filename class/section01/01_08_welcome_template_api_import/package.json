@@ -1,0 +1,7 @@
+{
+  "name": "01_08_welcome_template_api_import",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module"
+}
