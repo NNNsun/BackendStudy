@@ -34,4 +34,5 @@ function createTokenOfPhone(num) { //매개변수(파라미터)
     
     // (다음에)3. 핸드폰번호에 토큰 전송
 }
- createTokenOfPhone('01099999999');  // argument
+createTokenOfPhone('01099999999');  // argument
+ 
