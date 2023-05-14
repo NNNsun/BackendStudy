@@ -1,0 +1,11 @@
+{
+  "name": "03_08_async_await",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "coolsms-node-sdk": "^2.0.1"
+  }
+}
