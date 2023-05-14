@@ -35,6 +35,7 @@
 * 빈약한 Error 핸들링
   * REST API의 경우, 다양한 API 요청의 상태에 따라 HTTP status 코드를 반환하는 반면 Graphql의 경우, 모든 요청에 대해 200 OK status 코드를 내려주기 때문에, status 코드만으로 API 상태를 구분하고, 관리하는데 어렵다  
 <br>
+
 ```
 ⭐️ GraphQL는 재사용 가능성 측면에서 최적화하는데 목적을 두어야 한다
 ```
