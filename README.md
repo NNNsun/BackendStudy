@@ -5,3 +5,4 @@
 👉 Node.js와 Nest.js 학습
 ```
 * restAPI API Test: http://backend-example.codebootcamp.co.kr/api-docs/
+* graphQL API Test: http://backend-example.codebootcamp.co.kr/graphql
