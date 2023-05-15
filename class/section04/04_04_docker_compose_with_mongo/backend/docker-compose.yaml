@@ -1,0 +1,18 @@
+version: '3.7'
+
+# computers
+services: 
+  # 컴퓨터 1
+  my_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+  # 컴퓨터 2
+  my_database:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    ports:
+      - 27017:27017
