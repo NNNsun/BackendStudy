@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>결제페이지</title>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <script>
+      const requestPay = () => {
+        const IMP = window.IMP; // 생략 가능
+        IMP.init("imp17761046"); // 예: imp00000000a
+
+        IMP.request_pay(
+          {
+            pg: "kakaopay",
+            pay_method: "card",
+            // merchant_uid: "ORD20180131-0000011", // 주문번호 알아서 랜덤으로
+            name: "노르웨이 회전 의자",
+            amount: 100, // 숫자 타입
+            buyer_email: "gildong@gmail.com",
+            buyer_name: "홍길동",
+            buyer_tel: "010-4242-4242",
+            buyer_addr: "서울특별시 강남구 신사동",
+            buyer_postcode: "01181",
+          },
+          function (rsp) {
+            // callback
+            if (res.success) {
+              alert("결제에 성공했습니다!!");
+              axios.post(
+                "http://localhost:3000/graphql",
+                {
+                  qurey: `
+                  Mutation{
+                    createPointTransaction(impUid:"${rsp.imp_123456}",amount:${rsp.paid_amount}){
+                      id
+                      impUid
+                      amount
+                      status
+                    }
+                  }
+                `,
+                },
+                {
+                  headers: {
+                    //  Authorization:
+                    //  refreshToken으로 받은 Bearer 입력
+                  },
+                }
+              );
+            } else {
+              alert("결제에 실패했습니다!!");
+            }
+            //rsp.imp_uid 값으로 결제 단건조회 API를 호출하여 결제결과를 판단합니다.
+          }
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="requestPay()">결제하기</button>
+  </body>
+</html>
