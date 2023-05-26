@@ -51,7 +51,7 @@ export class Product {
   @Field(() => User)
   user: User;
 
-  @JoinTable() // 중간 테이블 생성 N:N
+  @JoinTable() // 중간 테이블 생성 N:M
   // @ManyToMany(()대상 테이블class =>(현재 table이 정의한 대상이 되는 table의 property)=> 대상 table.대상 table이 정의한 현재 table의 property)
   @ManyToMany(() => ProductTag, (productTags) => productTags.products)
   @Field(() => [ProductTag])
