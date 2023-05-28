@@ -2,7 +2,7 @@
 
 ```
 👉 인프런x코드캠프 강의
-👉 Node.js, Nest.js 학습
+👉 Nest.js, graphQL, 
 ```
 <br>
 
